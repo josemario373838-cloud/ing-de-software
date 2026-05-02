@@ -45,6 +45,12 @@ var connString = !string.IsNullOrWhiteSpace(connStringEnv)
     ? ConvertDatabaseUrlToConnectionString(connStringEnv)
     : builder.Configuration.GetConnectionString("DefaultConnection") ?? string.Empty;
 
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy =>
+        policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+});
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
@@ -70,6 +76,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseCors();
 app.UseHttpsRedirection();
 
 // Endpoints: Productos (CRUD)
