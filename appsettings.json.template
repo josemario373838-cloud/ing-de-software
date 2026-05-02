@@ -1,0 +1,12 @@
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "postgresql://neondb_owner:npg_B1xWSjneaGX9@ep-shy-heart-a4x9vof3-pooler.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft": "Warning",
+      "Microsoft.Hosting.Lifetime": "Information"
+    }
+  }
+}
